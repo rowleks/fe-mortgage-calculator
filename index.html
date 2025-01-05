@@ -12,54 +12,90 @@
 </head>
 <body>
 
-    <section>
-        <h3>Morgage Calculator</h3>
-        <small>Clear All</small>
+    <div class="container">
+
+        <section class="left-section">
+            <header>
+                <h3>Morgage Calculator</h3>
+                <small>Clear All</small>
+            </header>
+        
+            <form>
+                <fieldset class="input-box">
+                    <label for="amount">Mortgage Amount</label>
+                    <div>
+                        <span class="sym">£</span>
+                        <input type="number" name="amount">
+                    </div>
+                </fieldset>
     
-        <form>
-            <label for="amount">Mortgage Amount</label>
-            <div>
-                <span>£</span>
-                <input type="number" name="amount">
+                <fieldset class="input-box">
+                    <label for="term">Mortgage Term</label>
+                    <div>
+                        <input type="number" name="term">
+                        <span class="sym">years</span>
+                    </div>
+                </fieldset>
+    
+                <fieldset class="input-box">
+                    <label for="rate">Interest Rate</label>
+                    <div>
+                        <input type="number" name="rate" step="0.01">
+                        <span class="sym">%</span>
+                    </div>
+                </fieldset>
+    
+                <fieldset class="input-box">
+                    <label for="type">Mortgage Type</label>
+                    <div class="mtg-type">
+                        <input type="radio" name="type">
+                        <span>Repayment</span>
+                    </div>
+                    <div class="mtg-type">
+                        <input type="radio" name="type">
+                        <span>Interest Only</span>
+                    </div>
+                </fieldset>
+    
+    
+                <button class="btn" type="submit">
+                    <img src="./assets/icon-calculator.svg" alt="">
+                    <span>Calculate Repayments</span>
+                </button>
+            </form>
+    
+        </section>
+    
+        <section class="s2">
+            <div class="empty">
+                <img src="./assets/illustration-empty.svg" alt="">
+                <div>
+                    <h3>Results shown here</h3>
+                    <p>Complete the form and click "calculate repayments" to see what your monthly repayments would be.</p>
+                </div>
             </div>
 
-            <label for="term">Mortgage Term</label>
-            <div>
-                <input type="number" name="term">
-                <span>Years</span>
+            <div class="filled">
+                <h3>You results</h3>
+                <div>
+                    <p>Your results are shown below based on the information youu provided. To adjust the results, edit the form and click "calculate repayments" again</p>
+
+                    <div class="results">
+                        <div>
+                            <span>Your monthly repayments</span>
+                            <p class="result-val"> £1,797.74</p>
+                        </div>
+                        <div>
+                            <span>Total you'll repay over the term</span>
+                            <p class="result-val"> £539,322.94</p>
+                        </div>
+                    </div>
+                </div>
+
             </div>
+        </section>
+    </div>
 
-            <label for="rate">Mortgage Term</label>
-            <div>
-                <input type="number" name="rate">
-                <span>%</span>
-            </div>
-
-            <label for="type">Mortgage Type</label>
-            <div>
-                <input type="radio">
-                <span>Repayment</span>
-            </div>
-            <div>
-                <input type="radio">
-                <span>Interest Only</span>
-            </div>
-
-            <button type="submit">
-                <img src="./assets/icon-calculator.svg" alt="">
-                <span>Calculate Repayments</span>
-            </button>
-        </form>
-
-    </section>
-
-    <section>
-        <div>
-            <img src="./assets/illustration-empty.svg" alt="">
-            <h3>Results Shown here</h3>
-            <p>Complete the form and click "calculate repayments" to see what your monthly repayments would be.</p>
-        </div>
-    </section>
 
     
 </body>
