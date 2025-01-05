@@ -6,10 +6,61 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:ital,wght@0,200..800;1,200..800&display=swap" rel="stylesheet">
+    <link rel="icon" type="image/png" sizes="32x32" href="./assets/favicon-32x32.png">
     <link rel="stylesheet" href="./css/style.css">
     <title>Mortgage Repayment Calculator</title>
 </head>
 <body>
+
+    <section>
+        <h3>Morgage Calculator</h3>
+        <small>Clear All</small>
+    
+        <form>
+            <label for="amount">Mortgage Amount</label>
+            <div>
+                <span>£</span>
+                <input type="number" name="amount">
+            </div>
+
+            <label for="term">Mortgage Term</label>
+            <div>
+                <input type="number" name="term">
+                <span>Years</span>
+            </div>
+
+            <label for="rate">Mortgage Term</label>
+            <div>
+                <input type="number" name="rate">
+                <span>%</span>
+            </div>
+
+            <label for="type">Mortgage Type</label>
+            <div>
+                <input type="radio">
+                <span>Repayment</span>
+            </div>
+            <div>
+                <input type="radio">
+                <span>Interest Only</span>
+            </div>
+
+            <button type="submit">
+                <img src="./assets/icon-calculator.svg" alt="">
+                <span>Calculate Repayments</span>
+            </button>
+        </form>
+
+    </section>
+
+    <section>
+        <div>
+            <img src="./assets/illustration-empty.svg" alt="">
+            <h3>Results Shown here</h3>
+            <p>Complete the form and click "calculate repayments" to see what your monthly repayments would be.</p>
+        </div>
+    </section>
+
     
 </body>
 </html>
