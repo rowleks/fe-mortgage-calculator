@@ -14,7 +14,7 @@
 
     <div class="container">
 
-        <section class="left-section">
+        <section class="s1">
             <header>
                 <h3>Morgage Calculator</h3>
                 <small>Clear All</small>
@@ -23,31 +23,37 @@
             <form>
                 <fieldset class="input-box">
                     <label for="amount">Mortgage Amount</label>
-                    <div>
+                    <div class="input-brd">
                         <span class="sym">£</span>
                         <input type="number" name="amount">
                     </div>
+                    <small class="req">This field is required</small>
                 </fieldset>
+
+                <div class="term-rate">
+                    <fieldset class="input-box">
+                        <label for="term">Mortgage Term</label>
+                        <div class="input-brd">
+                            <input type="number" name="term">
+                            <span class="sym">years</span>
+                        </div>
+                        <small class="req">This field is required</small>
+                    </fieldset>
+        
+                    <fieldset class="input-box">
+                        <label for="rate">Interest Rate</label>
+                        <div class="input-brd">
+                            <input type="number" name="rate" step="0.01">
+                            <span class="sym">%</span>
+                        </div>
+                        <small class="req">This field is required</small>
+                    </fieldset>
+                </div>
     
-                <fieldset class="input-box">
-                    <label for="term">Mortgage Term</label>
-                    <div>
-                        <input type="number" name="term">
-                        <span class="sym">years</span>
-                    </div>
-                </fieldset>
-    
-                <fieldset class="input-box">
-                    <label for="rate">Interest Rate</label>
-                    <div>
-                        <input type="number" name="rate" step="0.01">
-                        <span class="sym">%</span>
-                    </div>
-                </fieldset>
     
                 <fieldset class="input-box">
                     <label for="type">Mortgage Type</label>
-                    <div class="mtg-type checked">
+                    <div class="mtg-type">
                         <input type="radio" name="type">
                         <span>Repayment</span>
                     </div>
@@ -76,17 +82,17 @@
             </div>
 
             <div class="filled">
-                <h3>You results</h3>
+                <h3>Your results</h3>
                 <div class="info">
                     <small>Your results are shown below based on the information you provided. To adjust the results, edit the form and click "calculate repayments" again</small>
 
                     <div class="results">
-                        <div>
+                        <div class="d1">
                             <small>Your monthly repayments</small>
                             <span class="month"> £1,797.74</span>
                         </div>
                         <hr>
-                        <div>
+                        <div class="d2">
                             <small>Total you'll repay over the term</small>
                             <span class="total"> £539,322.94</span>
                         </div>

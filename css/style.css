@@ -68,7 +68,7 @@ div.container {
     gap: 1rem;
 }
 
-section.left-section {
+section.s1 {
     display: flex;
     flex-direction: column;
     gap: 1rem;
@@ -87,11 +87,19 @@ fieldset.input-box {
     gap: .4rem;
 }
 
-fieldset.input-box div {
+.input-brd {
     display: flex;
     align-items: center;
     border: 1px solid var(--slate-900);
     border-radius: 3px;
+}
+
+.input-brd.l-valid {
+    border-color: var(--lime);
+}
+
+.input-brd.l-invalid {
+    border-color: var(--red);
 }
 
 fieldset {
@@ -104,6 +112,23 @@ fieldset {
     font-weight: 500;
 }
 
+.sym.s-valid {
+    background-color: var(--lime);
+}
+
+.sym.s-invalid {
+    background-color: var(--red);
+}
+
+.req {
+    color: var(--red);
+    display: none;
+}
+
+.req.show {
+    display: flex;
+}
+
 label {
     color: var(--slate-700);
     font-weight: 700;
@@ -114,6 +139,16 @@ div.mtg-type {
     gap: .8rem;
     font-weight: 700;
     color: var(--slate-900);
+    display: flex;
+    align-items: center;
+    gap: .5rem;
+    border: 1px solid var(--slate-700);
+}
+
+div.term-rate {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
 }
 
 .mtg-type.checked {
@@ -169,6 +204,7 @@ section.s2 {
     background-color: var(--slate-900);
     color: var(--slate-300);
     padding: 1.5rem 1rem;
+    display: flex;
 }
 
 div.empty, div.filled {
@@ -176,28 +212,39 @@ div.empty, div.filled {
     flex-direction: column;
     align-items: center;
     gap: 1rem; 
-    display: none;
 }
+
 
 div.empty img {
     max-width: 12rem;
 }
- .empty div {
+
+.empty div {
     width: 90%;
     text-align: center;
     display: flex;
     flex-direction: column;
     gap: 1rem;
- }
+}
 
 .s2 h3 {
     color: var(--white);
 }
 
+div.empty {
+        /* display: none; */
+        margin: auto 0;
+}
+
+.d-none {
+    display: none;
+}
+    
 div.filled {
     display: flex;
     flex-direction: column;
     align-items: flex-start;
+    display: none;
 }
 
 div.info {
@@ -234,4 +281,55 @@ span.total {
     color: var(--white);
     font-weight: 600;
     font-size: 1.2rem;
+}
+
+div.d1, div.d2 {
+    padding: .5rem 0;
+}
+
+@media (min-width: 900px) {
+    body {
+        background-color: var(--slate-100);
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        padding: 5rem;
+    }
+    div.container {
+        flex-direction: row;
+        width: 999px;
+        background-color: var(--white);
+        margin: auto;
+        border-radius: 20px;
+        gap: .2rem
+    }
+
+    section.s1, section.s2 {
+        flex: 1;
+        padding: 2rem;
+    }
+
+    section.s2 {
+        border-radius: 0 20px 20px 80px;
+    }
+
+    form {
+        margin-top: 1.5rem;
+    }
+
+    header {
+        flex-direction: row;
+        align-items: center;
+        justify-content: space-between;
+    }
+
+    div.term-rate {
+        flex-direction: row;
+    }
+
+    div.info {
+        gap: 2rem;
+    }
+
 }
