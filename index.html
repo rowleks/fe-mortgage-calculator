@@ -17,15 +17,15 @@
         <section class="s1">
             <header>
                 <h3>Morgage Calculator</h3>
-                <small>Clear All</small>
+                <small id="clear">Clear All</small>
             </header>
         
-            <form>
+            <form id="form">
                 <fieldset class="input-box">
                     <label for="amount">Mortgage Amount</label>
                     <div class="input-brd">
                         <span class="sym">£</span>
-                        <input type="number" name="amount">
+                        <input type="text" name="amount" autocomplete="off">
                     </div>
                     <small class="req">This field is required</small>
                 </fieldset>
@@ -54,11 +54,11 @@
                 <fieldset class="input-box">
                     <label for="type">Mortgage Type</label>
                     <div class="mtg-type">
-                        <input type="radio" name="type">
+                        <input type="radio" name="type" value="repayment">
                         <span>Repayment</span>
                     </div>
                     <div class="mtg-type">
-                        <input type="radio" name="type">
+                        <input type="radio" name="type" value="interest-only">
                         <span>Interest Only</span>
                     </div>
                 </fieldset>
@@ -81,7 +81,7 @@
                 </div>
             </div>
 
-            <div class="filled">
+            <div class="filled none">
                 <h3>Your results</h3>
                 <div class="info">
                     <small>Your results are shown below based on the information you provided. To adjust the results, edit the form and click "calculate repayments" again</small>
@@ -89,12 +89,12 @@
                     <div class="results">
                         <div class="d1">
                             <small>Your monthly repayments</small>
-                            <span class="month"> £1,797.74</span>
+                            <span class="month"><!--result goes here --></span>
                         </div>
                         <hr>
                         <div class="d2">
                             <small>Total you'll repay over the term</small>
-                            <span class="total"> £539,322.94</span>
+                            <span class="total"> <!--result goes here --></span>
                         </div>
                     </div>
                 </div>
@@ -103,7 +103,6 @@
         </section>
     </div>
 
-
-    
+<script src="./js/script.js"></script>
 </body>
 </html>
