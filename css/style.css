@@ -90,7 +90,7 @@ fieldset.input-box {
 .input-brd {
     display: flex;
     align-items: center;
-    border: 1px solid var(--slate-900);
+    border: 1px solid var(--slate-700);
     border-radius: 3px;
 }
 
@@ -134,7 +134,6 @@ fieldset {
 
 label {
     color: var(--slate-700);
-    font-weight: 700;
 }
 
 div.mtg-type {
@@ -239,6 +238,10 @@ div.empty img {
     color: var(--white);
 }
 
+.s2 small, .s2 p {
+    line-height: 1.5;
+}
+
 div.empty {
         /* display: none; */
         margin: auto 0;
@@ -302,10 +305,11 @@ div.d1, div.d2 {
         align-items: center;
         justify-content: center;
         padding: 5rem;
+        height: 100vh;
     }
     div.container {
         flex-direction: row;
-        width: 999px;
+        width: 900px;
         background-color: var(--white);
         margin: auto;
         border-radius: 20px;
@@ -337,6 +341,10 @@ div.d1, div.d2 {
 
     div.info {
         gap: 2rem;
+    }
+
+    button.btn {
+        width: 70%;
     }
 
 }
