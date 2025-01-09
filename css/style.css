@@ -206,6 +206,10 @@ button.btn {
     color: var(--slate-900);
 }
 
+.btn:hover {
+    background-color: hsla(61, 70%, 52%, .5);
+}
+
 
 section.s2 {
     background-color: var(--slate-900);
