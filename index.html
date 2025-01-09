@@ -43,7 +43,7 @@
                     <fieldset class="input-box">
                         <label for="rate">Interest Rate</label>
                         <div class="input-brd">
-                            <input type="number" name="rate" step="0.01">
+                                <input id="rate1" type="number" name="rate" step="0.01">
                             <span class="sym">%</span>
                         </div>
                         <small class="req">This field is required</small>
@@ -53,14 +53,14 @@
     
                 <fieldset class="input-box">
                     <label for="type">Mortgage Type</label>
-                    <div class="mtg-type">
-                        <input type="radio" name="type" value="repayment">
+                    <label for="type1" class="mtg-type">
+                        <input id="type1" type="radio" name="type" value="repayment">
                         <span>Repayment</span>
-                    </div>
-                    <div class="mtg-type">
-                        <input type="radio" name="type" value="interest-only">
+                    </label>
+                    <label for="type2" class="mtg-type">
+                        <input id="type2" type="radio" name="type" value="interest-only">
                         <span>Interest Only</span>
-                    </div>
+                    </label>
                     <small class="req">This field is required</small>
                 </fieldset>
     
@@ -107,7 +107,7 @@
     <div class="attribution">
         Challenge by <a href="https://www.frontendmentor.io?ref=challenge" target="_blank">Frontend Mentor</a>. 
         Coded by <a href="https://rowland-momoh.netlify.app/" target="_blank">Rowland Momoh</a>.
-      </div>
+    </div>
 
 <script src="./js/script.js"></script>
 </body>

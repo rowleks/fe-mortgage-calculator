@@ -136,7 +136,7 @@ label {
     color: var(--slate-700);
 }
 
-div.mtg-type {
+label.mtg-type {
     padding: .8rem;
     gap: .8rem;
     font-weight: 700;
@@ -144,11 +144,11 @@ div.mtg-type {
     display: flex;
     align-items: center;
     gap: .5rem;
-    border: 1px solid var(--slate-700);
+    outline: 1px solid var(--slate-700);
 }
 
-.mtg-type:hover {
-    border-color: var(--lime);
+label.mtg-type:hover {
+    outline-color: var(--lime);
     cursor: pointer;
 }
 
@@ -160,14 +160,14 @@ div.term-rate {
 
 .mtg-type.checked {
     background-color: var(--bg-lime);
-    border: 2px solid var(--lime);
+    outline: 2px solid var(--lime);
 }
 
 
 input[type='radio'] {
     appearance: none;
     width: 15px; height: 15px;
-    border: 1px solid var(--slate-900);
+    outline: 1px solid var(--slate-900);
     border-radius: 50%;
     cursor: pointer;
     position: relative;
@@ -185,7 +185,7 @@ input[type='radio']::before {
 
 
 input[type='radio']:checked {
-    border: 2px solid var(--lime);
+    outline: 2px solid var(--lime);
 }
 
 input[type='radio']:checked::before {

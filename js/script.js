@@ -66,7 +66,7 @@ function handleForm(e) {
 
         const total = pmt * info.nper
 
-        return [pmt, total]
+        return { pmt, total}
     }
 
     const calculateInterestOnly = (data) => {
@@ -76,27 +76,27 @@ function handleForm(e) {
         info.periodicRate = (info.rate / 100) / 12
 
         const monthlyPay = info.amount * info.periodicRate
-        const [mp, tp] = calculateRepayment(info)
-        const totalPay = tp + (monthlyPay * interestPeriod * 12)
+        const { total } = calculateRepayment(info)
+        const totalPay = total + (monthlyPay * interestPeriod * 12)
 
-        return [monthlyPay, totalPay]
+        return { monthlyPay, totalPay}
     }
 
     if(data.amount && data.term && data.rate && data.type === "repayment") 
     {
-        const [monthlyPay, totalPay] = calculateRepayment(data)
+        const { pmt, total} = calculateRepayment(data)
 
         empty.classList.add('none')
         filled.classList.remove('none')
 
-        monthElem.textContent = monthlyPay.toLocaleString('en-US', {maximumFractionDigits: 2, style: 'currency', currency: "GBP"})
+        monthElem.textContent = pmt.toLocaleString('en-US', {maximumFractionDigits: 2, style: 'currency', currency: "GBP"})
 
-        totalElem.textContent = totalPay.toLocaleString('en-US', {maximumFractionDigits: 2, style: 'currency', currency: "GBP"})
+        totalElem.textContent = total.toLocaleString('en-US', {maximumFractionDigits: 2, style: 'currency', currency: "GBP"})
     }
 
     if(data.amount && data.term && data.rate && data.type === "interest-only") 
     {
-        const [monthlyPay, totalPay] = calculateInterestOnly(data)
+        const { monthlyPay, totalPay } = calculateInterestOnly(data)
 
         empty.classList.add('none')
         filled.classList.remove('none')
@@ -109,14 +109,14 @@ function handleForm(e) {
 }
 
 function handleDisplay(e) {
-    let rawValue = e.value.replace(/,/g, '');
-    rawValue = rawValue.replace(/[^0-9.]/g, ''); 
+    let rawValue = e.value.replace(/,/g, ''); // Remove existing commas
+    rawValue = rawValue.replace(/[^0-9.]/g, ''); // Remove any non-numeric and non-period characters
 
     if ((rawValue.match(/\./g) || []).length > 1) {
-        rawValue = rawValue.replace(/\.(?=[^.]*$)/, ''); 
+        rawValue = rawValue.replace(/\.(?=[^.]*$)/, ''); // Remove all periods except the last one
     }
 
-    rawValue = rawValue.replace(/(\.\d{2})\d+/g, '$1');
+    rawValue = rawValue.replace(/(\.\d{2})\d+/g, '$1'); // Limit to two decimal places
 
     if (rawValue === '') {
         e.value = '';
@@ -125,9 +125,9 @@ function handleDisplay(e) {
 
     const [integer, decimal] = rawValue.split('.');
 
-    const formattedInteger = Number(integer).toLocaleString('en-US');
+    const formattedInteger = Number(integer).toLocaleString('en-US'); // Format integer part with commas
 
-    e.value = decimal !== undefined ? `${formattedInteger}.${decimal}` : formattedInteger;
+    e.value = decimal !== undefined ? `${formattedInteger}.${decimal}` : formattedInteger; // Reconstruct the value with formatted integer and decimal parts
 }
 
 function handleReset() {
